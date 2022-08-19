@@ -22,7 +22,8 @@ Create a space in [Contentful][contentful-api]
 Go to Settings - Space Settings > API keys and add an API key.
 
 Take note of your Space ID and access tokens.
-> put into react app unconfirmed location
+> Content Delivery API - access token is used retrieve published content
+> Content Preview API - access token is used to retrieve unpublished content
 
 
 
