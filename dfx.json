@@ -1,13 +1,6 @@
 {
   "canisters": {
-    "dfinity_react_cms_backend": {
-      "main": "src/dfinity_react_cms_backend/main.mo",
-      "type": "motoko"
-    },
     "dfinity_react_cms_frontend": {
-      "dependencies": [
-        "dfinity_react_cms_backend"
-      ],
       "frontend": {
         "entrypoint": "src/dfinity_react_cms_frontend/src/index.html"
       },

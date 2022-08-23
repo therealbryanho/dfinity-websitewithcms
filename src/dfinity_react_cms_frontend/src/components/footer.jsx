@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Container, Grid } from "../../../../node_modules/@material-ui/core/index";
+import Section from "./Section";
+import { Container, Grid } from "@material-ui/core";
 
 function Footer(props) {
     return (
-        <Box component="section" style={{ marginTop: "auto" }}>
+        <Section style={{ marginTop: "auto" }}>
             <Container>
                 <Grid container={true} >
                     <Grid item={true} >
@@ -11,7 +12,7 @@ function Footer(props) {
                     </Grid>
                 </Grid>
             </Container>
-        </Box>
+        </Section>
     );
 }
 export default Footer;

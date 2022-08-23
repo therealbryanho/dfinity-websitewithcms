@@ -1,18 +1,24 @@
 import React from "react";
-import { AppBar, Box, Container, Toolbar, Button } from "../../../../node_modules/@material-ui/core/index";
-function Navbar(props) {
-    const { pages, setPage } = props
-    const switchPage = (path) => {
-        setPage(path)
-    }
+import { AppBar, Button, Container, Toolbar } from "@material-ui/core";
+import { Link, useLocation } from "react-router-dom";
+import Section from "./Section";
+
+function Navbar({ pages }, props) { // Navbar will populate the links for the pages defined in the App, you can customize it in this component or add into App pages
+    const { pathname } = useLocation();
+
     return (
-        <Box component="section">
+        <Section>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Container>
                     <Toolbar>
                         {pages.map((page, index) => {
                             return (
-                                <Button key={index} variant="contained" onClick={() => switchPage(page.path)} >
+                                <Button
+                                    key={index}
+                                    component={Link}
+                                    to={page.path}
+                                    variant={pathname === page.path ? "contained" : "text"}
+                                >
                                     {page.name}
                                 </Button>
                             );
@@ -20,7 +26,7 @@ function Navbar(props) {
                     </Toolbar>
                 </Container>
             </AppBar>
-        </Box>
+        </Section>
     );
 }
 export default Navbar;
