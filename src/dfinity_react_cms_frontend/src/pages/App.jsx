@@ -8,7 +8,7 @@ import Test from "./Test";
 
 
 function App(props) {
-    const pages = [ // define your pages
+    const pages = [ // define your pages here
         { name: "Home", path: "/", element: <Home /> },
         { name: "Test", path: "/test", element: <Test /> },
     ];
