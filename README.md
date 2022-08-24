@@ -8,7 +8,7 @@
   * [Pages](#pages)
   * [Components](#components)
     + [Main components](#main-components)
-    + [Contentful Content, Content Model, Fields components](#contentful-content--content-model--fields-components)
+    + [Contentful components](#contentful-components)
       - [Contenful Content Design](#contenful-content-design)
       - [Contenful Content Model Design](#contenful-content-model-design)
       - [Contenful Fields Design](#contenful-fields-design)
@@ -70,7 +70,7 @@ if (content_data) {...}
 
 
 The main component acts as a controller for the page and the component services
-#### Contentful Content, Content Model, Fields components
+#### Contentful components
 Explore the `<Post />, <PostList />, <PostType />`, `<Fields />` components.
 ##### Contenful Content Design
 In `Post.jsx`, the `<Post />`, `<PostList />` and `<PostListItem />` are different design JSX elements derived from the **Contentful *Content***. These are children components of the main component `<LatestBlogPosts />` defined with different designs of the *Content*. 
