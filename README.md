@@ -1,18 +1,18 @@
 # ♾️ DFINITY REACT CONTENTFUL CMS 
 ![dfx-shield](https://img.shields.io/badge/dfx_0.11.1-yellowgreen) ![react-shield](https://img.shields.io/badge/react_18-blue) ![material-ui-shield](https://img.shields.io/badge/@material--ui-blueviolet) ![graphql-shield](https://img.shields.io/badge/GraphQL-red) ![contentful-shield](https://img.shields.io/badge/Contentful_API-yellow)
 
-- [Getting Started](#getting-started)
-  * [Setting Up Local Development Environment](#setting-up-local-development-environment)
-  * [Connecting your Contentful API](#connecting-your-contentful-api)
-- [Project File Structure and Design](#project-file-structure-and-design)
-  * [Pages](#pages)
-  * [Components](#components)
+- [📝 Getting Started](#---getting-started)
+  * [⚙️ Setting Up Local Development Environment](#---setting-up-local-development-environment)
+  * [🔗 Connecting your Contentful API](#---connecting-your-contentful-api)
+- [📂 Project File Structure and Design](#---project-file-structure-and-design)
+  * [📄 Pages](#---pages)
+  * [➿   Components](#----components)
     + [Adding main components](#adding-main-components)
     + [Add contentful model components](#add-contentful-model-components)
     + [Customizing Contentful Fields](#customizing-contentful-fields)
-  * [Utilities](#utilities)
-    + [Contentful Query (queries.jsx)](#contentful-query)
-    + [Contentful Service (service.jsx)](#contentful-service--servicejsx-)
+  * [⚒️ Utilities](#---utilities)
+    + [Contentful Query](#contentful-query)
+    + [Contentful Service](#contentful-service)
 
 ## 📝 Getting Started
 
@@ -48,7 +48,7 @@ index.css - main styles
 -- components/ - Components that can potentially be reused
 -- utils/ - service files
     
-### 📄 Pages (pages/) 
+### 📄 Pages 
 Create new pages in this folder and define them in App.js.
 ```
 const pages = [ // define your pages here
@@ -58,7 +58,7 @@ const pages = [ // define your pages here
 ```
 Don't forget to import your JSX Element.
 
-### ➿	Components (components/)
+### ➿	Components 
 #### Adding main components
 - [Envision a generally focused component][thinking-react]
 - Explore breakdown of the ```<LatestBlogPosts />``` Component. 
@@ -78,11 +78,11 @@ As mentioned above in Fields.jsx, the recommended way to develop these component
 3. Customize the component
 Passing styles from the main component to design the looks and developing a general structure for component.
 
-### ⚒️ Utilities (util/)
+### ⚒️ Utilities
 This folder contains contentful services (util/contentful/)
 1. queries.jsx (customizable)
 2. service.jsx (static)
-#### Contentful Query (queries.jsx)
+#### Contentful Query
 Define graphql queries in this file in relation to the main component. Can be customized if your graphql is more complex or dynamic.
 ```<LatestBlogPosts />``` component has 2 queries
 1. content - get a list of posts
@@ -95,7 +95,7 @@ You can add more functions to cater for dynamic queries
 
 This service is used at the main component get the query and pass it into the **Contentful Service** to fetch data.
 
-#### Contentful Service (service.jsx)
+#### Contentful Service
 No changes should be made in this service file. It acts as a helper to fetch Contentful data with graphql queries.
 
    [install-sdk]: <https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove/>
