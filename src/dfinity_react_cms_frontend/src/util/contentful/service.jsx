@@ -1,6 +1,3 @@
-import Contentful_Query from "./queries";
-
-
 class Contentful_Service {
     // Define API TOKENS and SPACE IDS, use an array to manage multiple spaces and associated tokens
     delivery_api_token = 'OCLvDwk6HjdpR3OxvqhLaD-zuXLwo2QYEueE9pYJZuU';
@@ -29,9 +26,7 @@ class Contentful_Service {
     }
 
     // Define the service to fetch preview content, content that is unpublished.
-    getPreviewContent = async (component) => {
-        // Get the query according the component
-        const query = new Contentful_Query().getQuery(component);
+    getPreviewContent = async (query) => {
         //  Fetch and return data
         return await window.fetch(`https://graphql.contentful.com/content/v1/spaces/${this.spaceId}/`, {
             method: "POST",

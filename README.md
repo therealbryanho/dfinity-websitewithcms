@@ -7,9 +7,11 @@
   * [Directory](#directory)
   * [Pages](#pages)
   * [Components](#components)
-    + [Adding main components](#adding-main-components)
-    + [Add contentful model components](#add-contentful-model-components)
-    + [Customizing Contentful Fields](#customizing-contentful-fields)
+    + [Main components](#main-components)
+    + [Contentful Content, Content Model, Fields components](#contentful-content--content-model--fields-components)
+      - [Contenful Content Design](#contenful-content-design)
+      - [Contenful Content Model Design](#contenful-content-model-design)
+      - [Contenful Fields Design](#contenful-fields-design)
   * [Utilities](#utilities)
     + [Contentful Query](#contentful-query)
     + [Contentful Service](#contentful-service)
@@ -51,46 +53,98 @@ const pages = [ // define your pages here
 ```
 Don't forget to import your JSX Element.
 ### Components
-#### Adding main components
+#### Main components
 [Design a general but focused component][thinking-react]
 
-Explore breakdown of the `<LatestBlogPosts /> `component. 
+Explore breakdown of the `<LatestBlogPosts /> `component which mainly includes component states, styles, layout and handles.
 
-Includes states, styles, layout.
+Fetching data in the main component with **Contentful Query and Contentful Service**
+```
+const query_service = new Contentful_Query();
+const content_service = new Contentful_Service();
+            
+const content_query = query_service.getContentQuery(...);
+const content_data = await content_service.getDeliveryContent(content_query);
+if (content_data) {...}
+```
+
 
 The main component acts as a controller for the page and the component services
-#### Add contentful model components
-Explore `<PostList />, <Post />, <PostType />`.
+#### Contentful Content, Content Model, Fields components
+Explore the `<Post />, <PostList />, <PostType />`, `<Fields />` components.
+##### Contenful Content Design
+In `Post.jsx`, the `<Post />`, `<PostList />` and `<PostListItem />` are different design JSX elements derived from the **Contentful *Content***. These are children components of the main component `<LatestBlogPosts />` defined with different designs of the *Content*. 
+|State|JSX Element|
+|--|--|
+|Many Posts|`<PostList />`|
+|One Post|`<Post />`|
 
-These JSX element defines the structure which takes **Contentful Content** data and turn it into components.
+Post will look different depending on the state of `<LatestBlogPosts />` 
+##### Contenful Content Model Design
+In `PostType.jsx`, the `<PostType />` JSX element is derived from the **Contentful *Content Model***. Handles the type of ***Content Model*** to display and contains the different types of ***Content Model*** design structure.
 
-Further more, explore `Fields.jsx` which contains Contenful components. These component are based on the **Contenful Content Model** which makes it easier to build **Contentful Content** components
-#### Customizing Contentful Fields
-As mentioned above in Fields.jsx, the recommended way to develop these components is:
-1. Identify the data structure passed from the API of a **Contentful Content Model** field. Use [GraphiQL][contentful-graphql] to see JSON results.
-2. Process the data and identify the components that can be used. E.g. An image field is expected to return a width, height, url, title properties and we can add them into an img component.
+Post Type is determined by 2 factors
+-- Post Content Design
+-- Post Content Data
+
+This table shows children JSX elements of the Post Content Design based on Post Content Data that has no image, an image, images.
+||`<Post />`|`<PostList />`|
+|---|---|---|
+|No Media|`<PostWithNoMedia />`|`<ListPostWithNoMedia />`|
+|An Image|`<PostWithAnImage />`|`<ListPostWithAnImage />`|
+|Images|`<PostWithImages />`|`<ListPostWithImages />`|
+
+Style classes are passed into the design of these elements.
+##### Contenful Fields Design 
+In `Fields.jsx`, these JSX elements are responsible for processing data into simple components. Keep the design simple and don't be afraid add more.
+
+E.g.:
+Identify the data structure passed from the API of a **Contentful Content Model** field. Use [GraphiQL][contentful-graphql] to see JSON results.
+```
+image{
+    title: "test"
+    url: "https://..."
+    width: 200
+    height: 100
+}
+```
+Handle data and display in simple components. 
 `<img src={image.url} alt={image.title} width={image.width} height={image.height} />`
-3. Customize the component
 
-Passing styles from the main component to design the looks and developing a general structure for component.
+You can use the collection of *Fields* elements to build many ***Content Model*** designs.
 ### Utilities
 This folder contains contentful services (util/contentful/)
 #### Contentful Query
-`queries.jsx`
-Define graphql queries in this file in relation to the main component. Can be customized if your graphql is more complex or dynamic.
-```<LatestBlogPosts />``` component has 2 queries
-1. content - get a list of posts
-2. pagination - get total posts to calculate the pagination 
+Define graphql queries in `queries.jsx` relative to the main component.
+E.g. Add into stored_queries the name of the main component "SomeMainComponent" as the object name.
+```
+stored_queries = {
+    "LatestBlogPosts" : {
+        content: function(limit, skip){
+            return `...`;
+        }
+        pagination: `...`;
+    },
+    "SomeMainComponent":{
+        ...
+    }
+}
+```
+A main component can have many queries, if an argument is required to pass in for the query it can be a function instead of a string with `` quotes.
 
-And 2 functions to get LatestBlogPosts component queries.
-1. getContentQuery(component, limit, skip)
-2. getPaginationQuery(component)
-You can add more functions to cater for dynamic queries
-
-This service is used at the main component get the query and pass it into the **Contentful Service** to fetch data.
+These functions below are used to identify the stored query
+```
+getContentQuery(component, limit, skip) {
+    return this.stored_queries[component].content(limit, skip);
+}
+getPaginationQuery(component) {
+    return this.stored_queries[component].pagination;
+}
+```
+This query helper is called in the main component to get the query before passing it into the **Contentful Service**.
 #### Contentful Service
-`service.jsx`
-No changes should be made in this service file. It acts as a helper to fetch Contentful data with graphql queries.
+Import Contentful API tokens and spaceId into `service.jsx`;
+This helper is called to fetch Contentful data for the main component.
 
    [install-sdk]: <https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove/>
    [git-repo-url]: <https://github.com/therealbryanho/dfinity-websitewithcms>
