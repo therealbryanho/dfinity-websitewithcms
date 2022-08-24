@@ -93,7 +93,7 @@ function ContentFulBoolean(props) {
 function ContentFulJSON(props) { // Gets complex when there are different types of content input
     if (!props) return;
 
-    const { property, value } = props,
+    const { property, value, className } = props,
         { json } = value;
 
     if (json.content[0].nodeType === "paragraph") {
@@ -109,7 +109,7 @@ function ContentFulJSON(props) { // Gets complex when there are different types 
             }
         });
 
-        return createElement(Typography, { key: property, paragraph: true }, elements);
+        return createElement(Typography, { key: property, paragraph: true, className: className }, elements);
     }
 }
 
@@ -128,4 +128,4 @@ export {
     ContentFulBoolean,
     ContentFulJSON,
     ContentFulReference
-}
+};

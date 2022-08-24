@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Grid, Link, makeStyles, Typography } from '@material-ui/core';
 import { Post } from './Post';
 import Section from './Section';
+import { Container, Grid, Link, makeStyles, Typography } from '@material-ui/core';
 
 const useViewPostStyles = makeStyles((theme) => ({
     container: {
@@ -15,28 +15,35 @@ const usePostStyles = makeStyles((theme) => ({
     card: {
         width: "100%",
         padding: "0rem",
-        margin: "0.5rem",
+        margin: "1rem",
         boxShadow: "2px 2px 2px 2px #888888"
     },
     title: {
         fontWeight: "bold",
-        paddingBottom: "1rem"
+        paddingBottom: "0rem",
+        textAlign: "center"
     },
-    description: {},
-    image: {},
+    description: {
+        padding:"1%",
+        textAlign: "center"
+    },
+    image: {
+    },
     published: {
         fontWeight: "lighter",
-        fontStyle: "italic"
+        fontStyle: "italic",
+        textAlign: "right"
     }
 }))
 
 function ViewBlogPost(props) {
+    // const component_name = "ViewBlogPost";
     const component_classes = useViewPostStyles();
     const post_classes = usePostStyles();
 
     const post = props.post || false;
     if (!post) return;
-    const { back } = props; // Set viewPost to false to go back to Latest Blog Posts
+    const { back } = props; // Set viewPost to false to go back to LatestBlogPosts
 
     return (
         <Section>

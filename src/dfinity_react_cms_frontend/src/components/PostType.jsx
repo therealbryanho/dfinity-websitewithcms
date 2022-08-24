@@ -62,27 +62,25 @@ function PostWithOneImage(props) {
         image } = post;
 
     return (<>
-        <Grid item={true} xs={12} sm={4} md={4} lg={4}>
-            <ContentFulMedia
-                property="media"
-                value={image}
-                className={classes.image}
-            />
-        </Grid>
-        <Grid item={true} xs={12} sm={8} md={8} lg={8}>
+        <Grid item={true} xs={12} sm={12} md={12} lg={12}>
             <CardContent>
-                <ContentFulText
-                    property="title"
-                    value={title} variant="h5"
-                    className={classes.title} />
-                <ContentFulJSON
-                    property="description"
-                    value={description}
-                    className={classes.description} />
                 <ContentFulDate
                     property="date"
                     value={published}
                     className={classes.published} />
+                <ContentFulText
+                    property="title"
+                    value={title} variant="h5"
+                    className={classes.title} />
+                    <ContentFulMedia
+                        property="media"
+                        value={image}
+                        className={classes.image}
+                    />
+                    <ContentFulJSON
+                        property="description"
+                        value={description}
+                        className={classes.description} />
             </CardContent>
         </Grid>
     </>);

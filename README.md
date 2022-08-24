@@ -26,6 +26,12 @@
 View the application on ```localhost://8000/?canisterId=[your canisterId]```
 
 During **development**, if you come across ```Could not find a canister id to forward to.```,  ensure the path ends with ```?canisterId=[your canisterId]``` 
+
+For development, you can create another react project and install the same dependencies. Copy the `component/`, `pages/` and `util/` folders into the `src/` and replace the `<App />` element in new project `index.js` with the new `<App />` from `pages/App.jsx`. 
+Dependencies for development react app
+
+`npm install @material-ui/core @mui/styles @mui/material @emotion/react @emotion/styled --legacy-peer-deps`
+
 ## Connecting your Contentful API 
 Create a space in [Contentful][contentful-api]
 Go to Settings - Space Settings > API keys and add an API key.
@@ -44,8 +50,12 @@ index.css - main styles
 -- components/ - Components that can potentially be reused
 -- utils/ - service files
 ### Pages 
-Create new pages in this folder and define them in App.js.
+Create new pages in this folder and define them in `App.jsx`.
+Take note: file extension jsx requires `import React from "react";`.
 ```
+import Home from "./Home";
+import Test from "./Test";
+...
 const pages = [ // define your pages here
         { name: "Home", path: "/", element: <Home /> },
         { name: "Test", path: "/test", element: <Test /> },
@@ -115,7 +125,7 @@ You can use the collection of *Fields* elements to build many ***Content Model**
 ### Utilities
 This folder contains contentful services (util/contentful/)
 #### Contentful Query
-Define graphql queries in `queries.jsx` relative to the main component.
+Define graphql queries in `queries.js` relative to the main component.
 E.g. Add into stored_queries the name of the main component "SomeMainComponent" as the object name.
 ```
 stored_queries = {
@@ -143,7 +153,7 @@ getPaginationQuery(component) {
 ```
 This query helper is called in the main component to get the query before passing it into the **Contentful Service**.
 #### Contentful Service
-Import Contentful API tokens and spaceId into `service.jsx`;
+Import Contentful API tokens and spaceId into `service.js`;
 This helper is called to fetch Contentful data for the main component.
 
    [install-sdk]: <https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove/>

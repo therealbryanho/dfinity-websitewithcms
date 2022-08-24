@@ -38,12 +38,12 @@ const usePostStyles = makeStyles((theme) => ({}));
 
 // Define the component
 function LatestBlogPosts() {
+    const component_name = "LatestBlogPosts";
 
     const component_classes = useLatestBlogPostsStyles(); // used in this class
     const postlist_classes = usePostListStyles(); // pass to post list
     const post_classes = usePostStyles(); // pass to view post
 
-    const component_name = "LatestBlogPosts";
     const postLimit = 2; // Post limit on each page
 
     const [totalPost, setTotalPost] = useState(false);
@@ -56,7 +56,8 @@ function LatestBlogPosts() {
     const changePage = (event, value) => {
         fetchPosts(value);
     }
-    const fetchPosts = async (value) => {
+
+    const fetchPosts = async (value) => { // Fetch when page changes, called on change page
         const query_service = new Contentful_Query();
         const content_service = new Contentful_Service();
 
@@ -68,7 +69,7 @@ function LatestBlogPosts() {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => { // Will only run once
         const load = async () => {
             const limit = postLimit, skip = 0;
             const query_service = new Contentful_Query();
@@ -79,7 +80,6 @@ function LatestBlogPosts() {
             if (pagination_data) {
                 setTotalPost(pagination_data.postCollection.total);
             }
-
 
             const content_query = query_service.getContentQuery(component_name, limit, skip);
             const content_data = await content_service.getDeliveryContent(content_query);

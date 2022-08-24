@@ -1,7 +1,8 @@
 import React from "react";
+import Section from "./Section";
 import { AppBar, Button, Container, Toolbar } from "@material-ui/core";
 import { Link, useLocation } from "react-router-dom";
-import Section from "./Section";
+
 
 function Navbar({ pages }, props) { // Navbar will populate the links for the pages defined in the App, you can customize it in this component or add into App pages
     const { pathname } = useLocation();
