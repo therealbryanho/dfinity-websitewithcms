@@ -6,11 +6,11 @@
   * [🔗 Connecting your Contentful API](#---connecting-your-contentful-api)
 - [📂 Project File Structure and Design](#-project-file-structure-and-design)
   * [📄 Pages](#-pages)
-  * [➿   Components](#-components)
+  * [➿   Components](#--components)
     + [Adding main components](#adding-main-components)
     + [Add contentful model components](#add-contentful-model-components)
     + [Customizing Contentful Fields](#customizing-contentful-fields)
-  * [⚒️ Utilities](#utilities)
+  * [⚒️ Utilities](#*utilities)
     + [Contentful Query](#contentful-query)
     + [Contentful Service](#contentful-service)
 
