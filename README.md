@@ -1,7 +1,7 @@
 # ♾️ DFINITY REACT CONTENTFUL CMS 
 ![dfx-shield](https://img.shields.io/badge/dfx_0.11.1-yellowgreen) ![react-shield](https://img.shields.io/badge/react_18-blue) ![material-ui-shield](https://img.shields.io/badge/@material--ui-blueviolet) ![graphql-shield](https://img.shields.io/badge/GraphQL-red) ![contentful-shield](https://img.shields.io/badge/Contentful_API-yellow)
 
-- [📝 Getting Started](#-getting-started)
+- [📝 Getting Started](#getting-started)
   * [⚙️ Setting Up Local Development Environment](#--setting-up-local-development-environment)
   * [🔗 Connecting your Contentful API](#--connecting-your-contentful-api)
 - [📂 Project File Structure and Design](#-project-file-structure-and-design)
@@ -14,7 +14,7 @@
     + [Contentful Query](#contentful-query)
     + [Contentful Service](#contentful-service)
 
-## 📝 Getting Started
+## [📝 Getting Started](#getting-started)
 
 ### ⚙️ Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
