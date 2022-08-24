@@ -1,9 +1,8 @@
 # ♾️ DFINITY REACT CONTENTFUL CMS 
 ![dfx-shield](https://img.shields.io/badge/dfx_0.11.1-yellowgreen) ![react-shield](https://img.shields.io/badge/react_18-blue) ![material-ui-shield](https://img.shields.io/badge/@material--ui-blueviolet) ![graphql-shield](https://img.shields.io/badge/GraphQL-red) ![contentful-shield](https://img.shields.io/badge/Contentful_API-yellow)
 
-- [Getting Started](#getting-started)
-  * [Setting Up Local Development Environment](#setting-up-local-development-environment)
-  * [Connecting your Contentful API](#connecting-your-contentful-api)
+- [Setting Up Local Development Environment](#setting-up-local-development-environment)
+- [Connecting your Contentful API](#connecting-your-contentful-api)
 - [Project File Structure and Design](#project-file-structure-and-design)
   * [Directory](#directory)
   * [Pages](#pages)
@@ -15,8 +14,7 @@
     + [Contentful Query](#contentful-query)
     + [Contentful Service](#contentful-service)
 
-## Getting Started
-### Setting Up Local Development Environment
+## Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
 2. Clone [this][git-repo-url] repository.
 3. Install dependencies ```npm install```.
@@ -26,7 +24,7 @@
 View the application on ```localhost://8000/?canisterId=[your canisterId]```
 
 During **development**, if you come across ```Could not find a canister id to forward to.```,  ensure the path ends with ```?canisterId=[your canisterId]``` 
-### Connecting your Contentful API 
+## Connecting your Contentful API 
 Create a space in [Contentful][contentful-api]
 Go to Settings - Space Settings > API keys and add an API key.
 Take note of your Space ID and access tokens.
@@ -35,7 +33,6 @@ Take note of your Space ID and access tokens.
 
 Queries you execute  [GraphiQL][contentful-graphql] can be used in your API calls.
 `` https://graphql.contentful.com/content/v1/spaces/{SPACE} ``
-
 ## Project File Structure and Design
 ### Directory
 index.html - root
