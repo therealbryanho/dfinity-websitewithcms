@@ -36,8 +36,9 @@ Dependencies for development react app
 Create a space in [Contentful][contentful-api]
 Go to Settings - Space Settings > API keys and add an API key.
 Take note of your Space ID and access tokens.
-> Content Delivery API - access token is used retrieve published content
-> Content Preview API - access token is used to retrieve unpublished content
+
+Content Delivery API - access token is used retrieve published content
+Content Preview API - access token is used to retrieve unpublished content
 
 Queries you execute  [GraphiQL][contentful-graphql] can be used in your API calls.
 `` https://graphql.contentful.com/content/v1/spaces/{SPACE} ``
