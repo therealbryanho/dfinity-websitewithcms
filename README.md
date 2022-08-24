@@ -1,22 +1,22 @@
 # ♾️ DFINITY REACT CONTENTFUL CMS 
 ![dfx-shield](https://img.shields.io/badge/dfx_0.11.1-yellowgreen) ![react-shield](https://img.shields.io/badge/react_18-blue) ![material-ui-shield](https://img.shields.io/badge/@material--ui-blueviolet) ![graphql-shield](https://img.shields.io/badge/GraphQL-red) ![contentful-shield](https://img.shields.io/badge/Contentful_API-yellow)
 
-- [📝 Getting Started](#-getting-started)
-  * [⚙️ Setting Up Local Development Environment](#---setting-up-local-development-environment)
-  * [🔗 Connecting your Contentful API](#---connecting-your-contentful-api)
-- [📂 Project File Structure and Design](#-project-file-structure-and-design)
-  * [📄 Pages](#-pages)
-  * [➿   Components](#--components)
+- [Getting Started](#getting-started)
+  * [Setting Up Local Development Environment](#setting-up-local-development-environment)
+  * [Connecting your Contentful API](#connecting-your-contentful-api)
+- [Project File Structure and Design](#project-file-structure-and-design)
+  * [Directory](#directory)
+  * [Pages](#pages)
+  * [Components](#components)
     + [Adding main components](#adding-main-components)
     + [Add contentful model components](#add-contentful-model-components)
     + [Customizing Contentful Fields](#customizing-contentful-fields)
-  * [⚒️ Utilities](#*utilities)
+  * [Utilities](#utilities)
     + [Contentful Query](#contentful-query)
     + [Contentful Service](#contentful-service)
 
-## 📝 Getting Started
-
-### ⚙️ Setting Up Local Development Environment
+## Getting Started
+### Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
 2. Clone [this][git-repo-url] repository.
 3. Install dependencies ```npm install```.
@@ -26,10 +26,7 @@
 View the application on ```localhost://8000/?canisterId=[your canisterId]```
 
 During **development**, if you come across ```Could not find a canister id to forward to.```,  ensure the path ends with ```?canisterId=[your canisterId]``` 
-
-
-### 🔗 Connecting your Contentful API 
-
+### Connecting your Contentful API 
 Create a space in [Contentful][contentful-api]
 Go to Settings - Space Settings > API keys and add an API key.
 Take note of your Space ID and access tokens.
@@ -37,18 +34,17 @@ Take note of your Space ID and access tokens.
 > Content Preview API - access token is used to retrieve unpublished content
 
 Queries you execute  [GraphiQL][contentful-graphql] can be used in your API calls.
-```https://graphql.contentful.com/content/v1/spaces/{SPACE}``` 
+`` https://graphql.contentful.com/content/v1/spaces/{SPACE} ``
 
-## 📂 Project File Structure and Design
-
+## Project File Structure and Design
+### Directory
 index.html - root
 index.jsx - this file renders JSX into index.html
 index.css - main styles
 -- pages/ - Application pages which contains reusable components
 -- components/ - Components that can potentially be reused
 -- utils/ - service files
-    
-### 📄 Pages 
+### Pages 
 Create new pages in this folder and define them in App.js.
 ```
 const pages = [ // define your pages here
@@ -57,32 +53,33 @@ const pages = [ // define your pages here
     ];
 ```
 Don't forget to import your JSX Element.
-
-### ➿	Components 
+### Components
 #### Adding main components
-- [Envision a generally focused component][thinking-react]
-- Explore breakdown of the ```<LatestBlogPosts />``` Component. 
-- Include states, styles, layout. Basically handle operations and display.
+[Design a general but focused component][thinking-react]
 
+Explore breakdown of the `<LatestBlogPosts /> `component. 
+
+Includes states, styles, layout.
+
+The main component acts as a controller for the page and the component services
 #### Add contentful model components
-- Explore ```<PostList />, <Post />, <PostType />```
-- These JSX element defines the structure which takes **Contentful Content** data and turn it into components.
-- Further more, explore Fields.jsx which contains Contenful components.
-- In Fields.jsx, these component are based on the **Contenful Content Model** which makes it easier to build **Contentful Content** components
+Explore `<PostList />, <Post />, <PostType />`.
 
+These JSX element defines the structure which takes **Contentful Content** data and turn it into components.
+
+Further more, explore `Fields.jsx` which contains Contenful components. These component are based on the **Contenful Content Model** which makes it easier to build **Contentful Content** components
 #### Customizing Contentful Fields
 As mentioned above in Fields.jsx, the recommended way to develop these components is:
 1. Identify the data structure passed from the API of a **Contentful Content Model** field. Use [GraphiQL][contentful-graphql] to see JSON results.
 2. Process the data and identify the components that can be used. E.g. An image field is expected to return a width, height, url, title properties and we can add them into an img component.
 `<img src={image.url} alt={image.title} width={image.width} height={image.height} />`
 3. Customize the component
-Passing styles from the main component to design the looks and developing a general structure for component.
 
-### ⚒️ Utilities
+Passing styles from the main component to design the looks and developing a general structure for component.
+### Utilities
 This folder contains contentful services (util/contentful/)
-1. queries.jsx (customizable)
-2. service.jsx (static)
 #### Contentful Query
+`queries.jsx`
 Define graphql queries in this file in relation to the main component. Can be customized if your graphql is more complex or dynamic.
 ```<LatestBlogPosts />``` component has 2 queries
 1. content - get a list of posts
@@ -94,8 +91,8 @@ And 2 functions to get LatestBlogPosts component queries.
 You can add more functions to cater for dynamic queries
 
 This service is used at the main component get the query and pass it into the **Contentful Service** to fetch data.
-
 #### Contentful Service
+`service.jsx`
 No changes should be made in this service file. It acts as a helper to fetch Contentful data with graphql queries.
 
    [install-sdk]: <https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove/>
