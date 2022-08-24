@@ -155,7 +155,8 @@ getPaginationQuery(component) {
 ```
 This query helper is called in the main component to get the query before passing it into the **Contentful Service**.
 #### Contentful Service
-Import Contentful API tokens and spaceId into `service.js`;
+Import Contentful API tokens and spaceId into `service.js`.
+
 This helper is called to fetch Contentful data for the main component.
 
    [install-sdk]: <https://internetcomputer.org/docs/current/developer-docs/build/install-upgrade-remove/>
