@@ -12,7 +12,7 @@
     + [Customizing Contentful Fields](#customizing-contentful-fields)
   * [Utilities](#utilities)
     + [Contentful Query (queries.jsx)](#contentful-query)
-    + [Contentful Service (service.jsx)](#contentful-service)
+    + [Contentful Service (service.jsx)](#contentful-service--servicejsx-)
 
 ## 📝 Getting Started
 
