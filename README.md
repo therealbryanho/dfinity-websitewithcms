@@ -9,9 +9,9 @@
   * [Components](#components)
     + [Main components](#main-components)
     + [Contentful components](#contentful-components)
-      - [Contenful Content Design](#contenful-content-design)
-      - [Contenful Content Model Design](#contenful-content-model-design)
-      - [Contenful Fields Design](#contenful-fields-design)
+      - [Contentful Content Design](#contentful-content-design)
+      - [Contentful Content Model Design](#contentful-content-model-design)
+      - [Contentful Fields Design](#contentful-fields-design)
   * [Utilities](#utilities)
     + [Contentful Query](#contentful-query)
     + [Contentful Service](#contentful-service)
@@ -33,6 +33,8 @@ Dependencies for development react app
 `npm install @material-ui/core @mui/styles @mui/material @emotion/react @emotion/styled --legacy-peer-deps`
 
 ## Connecting your Contentful API 
+New to Contentful? Official guide for creating space https://www.contentful.com/help/contentful-101/
+
 Create a space in [Contentful][contentful-api]
 Go to Settings - Space Settings > API keys and add an API key.
 Take note of your Space ID and access tokens.
@@ -84,7 +86,7 @@ if (content_data) {...}
 The main component acts as a controller for the page and the component services
 #### Contentful components
 Explore the `<Post />, <PostList />, <PostType />`, `<Fields />` components.
-##### Contenful Content Design
+##### Contentful Content Design
 In `Post.jsx`, the `<Post />`, `<PostList />` and `<PostListItem />` are different design JSX elements derived from the **Contentful *Content***. These are children components of the main component `<LatestBlogPosts />` defined with different designs of the *Content*. 
 |State|JSX Element|
 |--|--|
@@ -92,7 +94,7 @@ In `Post.jsx`, the `<Post />`, `<PostList />` and `<PostListItem />` are differe
 |One Post|`<Post />`|
 
 Post will look different depending on the state of `<LatestBlogPosts />` 
-##### Contenful Content Model Design
+##### Contentful Content Model Design
 In `PostType.jsx`, the `<PostType />` JSX element is derived from the **Contentful *Content Model***. Handles the type of ***Content Model*** to display and contains the different types of ***Content Model*** design structure.
 
 Post Type is determined by 2 factors
@@ -107,7 +109,7 @@ This table shows children JSX elements of the Post Content Design based on Post 
 |Images|`<PostWithImages />`|`<ListPostWithImages />`|
 
 Style classes are passed into the design of these elements.
-##### Contenful Fields Design 
+##### Contentful Fields Design 
 In `Fields.jsx`, these JSX elements are responsible for processing data into simple components. Keep the design simple and don't be afraid add more.
 
 E.g.:
