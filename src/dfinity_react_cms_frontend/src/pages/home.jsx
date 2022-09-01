@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Grid, Typography } from '../../../../node_modules/@material-ui/core/index';
-import Section from '../components/section';
+import Section from '../components/Section';
+import { Container, Grid, Typography } from '@material-ui/core';
 
 function Home(props) {
 

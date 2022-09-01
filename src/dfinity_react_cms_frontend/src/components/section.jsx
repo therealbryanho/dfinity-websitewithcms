@@ -1,8 +1,7 @@
 import React from "react";
-import { Box } from "../../../../node_modules/@material-ui/core/index";
+import { Box } from "@material-ui/core";
 
 function Section(props) {
-
     const size = "normal";
     const verticalPadding = {
         normal: { xs: 6 },
