@@ -26,8 +26,6 @@ You can create any kind of content in Contentful, like property listings, car li
 
 Have fun!
 
-![ScreenShot](screenshot.png)
-
 ## Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
 2. Clone [this][git-repo-url] repository.
@@ -36,6 +34,8 @@ Have fun!
 5. Run ```dfx deploy``` on another terminal to install the react application to the server.
 
 View the application on ```localhost://8000/?canisterId=[your canisterId]```
+
+![ScreenShot](screenshot.png)
 
 During **development**, if you come across ```Could not find a canister id to forward to.```,  ensure the path ends with ```?canisterId=[your canisterId]``` 
 
