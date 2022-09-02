@@ -55,7 +55,7 @@ Content Delivery API - access token is used retrieve published content.
 
 Content Preview API - access token is used to retrieve unpublished content.
 
-You can execute [GraphiQL][contentful-graphql] to query content  in your API calls.
+Use [GraphiQL][contentful-graphql] to test your GraphQL queries and preview content.
 `` https://graphql.contentful.com/content/v1/spaces/{space-id}/explore?access_token={access-token} ``
 ## Project File Structure and Design
 ### Directory
