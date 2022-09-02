@@ -26,6 +26,8 @@ You can create any kind of content in Contentful, like property listings, car li
 
 Have fun!
 
+![ScreenShot](screenshot.png)
+
 ## Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
 2. Clone [this][git-repo-url] repository.
