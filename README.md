@@ -1,6 +1,7 @@
 # ♾️ DFINITY REACT CONTENTFUL CMS 
 ![dfx-shield](https://img.shields.io/badge/dfx_0.11.1-yellowgreen) ![react-shield](https://img.shields.io/badge/react_18-blue) ![material-ui-shield](https://img.shields.io/badge/@material--ui-blueviolet) ![graphql-shield](https://img.shields.io/badge/GraphQL-red) ![contentful-shield](https://img.shields.io/badge/Contentful_API-yellow)
 
+- [Introduction](#introduction)
 - [Setting Up Local Development Environment](#setting-up-local-development-environment)
 - [Connecting your Contentful API](#connecting-your-contentful-api)
 - [Project File Structure and Design](#project-file-structure-and-design)
@@ -15,6 +16,15 @@
   * [Utilities](#utilities)
     + [Contentful Query](#contentful-query)
     + [Contentful Service](#contentful-service)
+
+## Introduction
+This is a boilerplate for you to easily setup and deploy a React website with Contentful CMS onto the Internet Computer blockchain.
+
+The boilerplate will get you setup with the structure of a blog. There are features like listing of multiple posts, viewing of an individual post, pagination and search.
+
+You can create any kind of content in Contentful, like property listings, car listings, even eCommerce products, and then edit the code in this boilerplate to load your content through the Contentful API.
+
+Have fun!
 
 ## Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
@@ -35,7 +45,7 @@ Dependencies for development react app
 ## Connecting your Contentful API 
 New to Contentful? Official guide for creating space https://www.contentful.com/help/contentful-101/
 
-Create a space in [Contentful][contentful-api]
+After creating a space in [Contentful][contentful-api], you can create an API key.
 Go to Settings - Space Settings > API keys and add an API key.
 Take note of your Space ID and access tokens.
 
@@ -43,7 +53,7 @@ Content Delivery API - access token is used retrieve published content.
 
 Content Preview API - access token is used to retrieve unpublished content.
 
-Queries you execute  [GraphiQL][contentful-graphql] can be used in your API calls.
+You can execute [GraphiQL][contentful-graphql] to query content  in your API calls.
 `` https://graphql.contentful.com/content/v1/spaces/{SPACE} ``
 ## Project File Structure and Design
 ### Directory
