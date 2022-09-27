@@ -29,7 +29,7 @@ Have fun!
 ## Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
 2. Clone [this][git-repo-url] repository.
-3. Install dependencies ```npm install```.
+3. Install dependencies ```npm install --legacy-peer-deps```.
 4. Run ```dfx start``` on a terminal to start server.
 5. Run ```dfx deploy``` on another terminal to install the react application to the server.
 
@@ -40,6 +40,8 @@ View the application on ```localhost://8000/?canisterId=[your canisterId]```
 During **development**, if you come across ```Could not find a canister id to forward to.```,  ensure the path ends with ```?canisterId=[your canisterId]``` 
 
 For development, you can create another react project and install the same dependencies. Copy the `component/`, `pages/` and `util/` folders into the `src/` and replace the `<App />` element in new project `index.js` with the new `<App />` from `pages/App.jsx`. 
+
+
 Dependencies for development react app
 
 `npm install @material-ui/core @mui/styles @mui/material @emotion/react @emotion/styled --legacy-peer-deps`
