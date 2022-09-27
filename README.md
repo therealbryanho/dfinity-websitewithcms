@@ -39,12 +39,25 @@ View the application on ```localhost://8000/?canisterId=[your canisterId]```
 
 During **development**, if you come across ```Could not find a canister id to forward to.```,  ensure the path ends with ```?canisterId=[your canisterId]``` 
 
-For development, you can create another react project and install the same dependencies. Copy the `component/`, `pages/` and `util/` folders into the `src/` and replace the `<App />` element in new project `index.js` with the new `<App />` from `pages/App.jsx`. 
+For development, you can create another react project and install the same dependencies. Copy the `component/`, `pages/` and `util/` folders into the new project `src/` and replace the `<App />` element in `index.js` with the new `<App />` from `pages/App.jsx`. 
 
 
-Dependencies for development react app
-
+Dependencies for development react app (with MUI)
+```
+"dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@material-ui/core": "^4.12.4",
+    "@mui/material": "^5.10.1",
+    "@mui/styles": "^5.9.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+```
+Install Material UI for React 18 
 `npm install @material-ui/core @mui/styles @mui/material @emotion/react @emotion/styled --legacy-peer-deps`
+  
+OR copy the dependencies and `npm install --legacy-peer-deps`
 
 ## Connecting your Contentful API 
 New to Contentful? Official guide for creating space https://www.contentful.com/help/contentful-101/
