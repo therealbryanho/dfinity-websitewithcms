@@ -29,7 +29,7 @@ Have fun!
 ## Setting Up Local Development Environment
 1. Install [DFINITY SDK][install-sdk] to run dfx commands.
 2. Clone [this][git-repo-url] repository.
-3. Install dependencies ```npm install --legacy-peer-deps```.
+3. Install dependencies ```npm install --legacy-peer-deps```. [⁉️][react18-mui-issue]
 4. Run ```dfx start``` on a terminal to start server.
 5. Run ```dfx deploy``` on another terminal to install the react application to the server.
 
@@ -194,3 +194,4 @@ This helper is called to fetch Contentful data for the main component.
    [contentful-graphql]: <https://www.contentful.com/developers/docs/references/graphql/#/introduction/basic-api-information/>
    [graphiql]:<https://graphql.contentful.com/content/v1/spaces/53t36x95ru0m/explore?access_token=OCLvDwk6HjdpR3OxvqhLaD-zuXLwo2QYEueE9pYJZuU />
    [thinking-react]: <https://reactjs.org/docs/thinking-in-react.html/>
+   [react18-mui-issue]:<https://stackoverflow.com/questions/71713111/mui-installation-doesnt-work-with-react-18 />
