@@ -1,4 +1,4 @@
-# ♾️ INTERNET COMPUTER BOILERPLATE - REACT with CONTENTFUL CMS 
+# ♾️ Internet Computer Boilerplate - React Website with Contentful CMS 
 ![dfx-shield](https://img.shields.io/badge/dfx_0.11.1-yellowgreen) ![react-shield](https://img.shields.io/badge/react_18-blue) ![material-ui-shield](https://img.shields.io/badge/@material--ui-blueviolet) ![graphql-shield](https://img.shields.io/badge/GraphQL-red) ![contentful-shield](https://img.shields.io/badge/Contentful_API-yellow)
 
 - [Introduction](#introduction)
